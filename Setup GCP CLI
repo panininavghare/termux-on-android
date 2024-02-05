@@ -1,0 +1,25 @@
+##Installing GCP CLI on Termux on Android.
+##Follow the steps on official guide by GCP using the Linux method - https://cloud.google.com/sdk/docs/install#linux
+##Replace the x with the correct versin no of the cli that you want to use
+
+curl -O https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli-xxx.x.x-linux-x86_64.tar.gz
+
+tar -xf google-cloud-cli-xxx.x.x-linux-x86_64.tar.gz
+
+chmod u+x ~/google-cloud-sdk/install.sh
+
+./google-cloud-sdk/install.sh
+
+pkg install python
+
+echo 'export PATH=$PATH:/data/data/com.termux/files/home/google-cloud-sdk/bin' >> .bashrc
+
+##Exit the Termux application and start the app again
+
+gcloud components update
+
+##
+##Optional:
+gcloud components install beta alpha
+##Installs all beta and alpha components. Requirement for few scenarios
+##List and Install all your required components using 'gcloud components' command
